@@ -130,6 +130,13 @@ public class Pessoa {
     public void setTelefoneDdd(String telefoneDdd) {
         this.telefoneDdd = telefoneDdd;
     }    
+
+    @Override
+    public String toString() {
+        return "Pessoa{" + "idPessoa=" + idPessoa + ", idNacionalidade=" + idNacionalidade + ", nacionalidade=" + nacionalidade + ", nomePessoa=" + nomePessoa + ", sobrenomePessoa=" + sobrenomePessoa + ", dataNascimento=" + dataNascimento + ", ddiContato=" + ddiContato + ", email=" + email + ", telefoneDdd=" + telefoneDdd + ", genero=" + genero + ", codigoCiva=" + codigoCiva + ", senha=" + senha + '}';
+    }
+    
+    
 }
 
 

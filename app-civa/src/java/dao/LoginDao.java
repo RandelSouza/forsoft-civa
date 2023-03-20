@@ -11,14 +11,16 @@ import model.Pessoa;
 public class LoginDao {
 
     public static Pessoa validar(Login login) {
+       
         Connection connection = ConnectionFactory.getConnection();
+         System.out.println("Após connection ");
         String sqlPortador = "";
         String sqlGestao = "";
         Pessoa dadosPessoa = null;
 
-        sqlPortador = "SELECT nomepessoa AS nome,\n"
-                + "       sobrenomepessoa AS sobrenome,\n"
-                + "       codigocivapc as codigociva,"
+        sqlPortador = "SELECT p.nomepessoa AS nome,\n"
+                + "       p.sobrenomepessoa AS sobrenome,\n"
+                + "       acp.codigocivapc as codigociva,"
                 + "       p.idpessoa \n"
                 + "FROM pessoa AS p\n"
                 + "LEFT JOIN acessopc AS acp\n"
@@ -63,6 +65,7 @@ public class LoginDao {
 
                     if (rs.next()) {
                         dadosPessoa = new Pessoa();
+                        
                         dadosPessoa.setNomePessoa(rs.getString("nome"));
                         dadosPessoa.setSobrenomePessoa(rs.getString("sobrenome"));
                         dadosPessoa.setCodigoCiva(rs.getString("codigociva"));

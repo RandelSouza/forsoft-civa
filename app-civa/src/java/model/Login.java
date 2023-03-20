@@ -51,5 +51,12 @@ public class Login {
     public void setPerfil(String perfil) {
         this.perfil = perfil;
     }
+
+    @Override
+    public String toString() {
+        return "Login{" + "email=" + email + ", senha=" + senha + ", perfil=" + perfil + ", codigoCiva=" + codigoCiva + '}';
+    }
+    
+    
     
 }

@@ -44,7 +44,6 @@ public class auth extends HttpServlet {
             loginAcesso.setEmail(request.getParameter("email"));
             loginAcesso.setSenha(request.getParameter("senha"));
             loginAcesso.setCodigoCiva(request.getParameter("civa"));
-            
 
             HttpSession session = request.getSession();
             
@@ -63,6 +62,8 @@ public class auth extends HttpServlet {
             Pessoa pessoa = null;
             try {
                 pessoa = LoginDao.validar(loginAcesso);
+                 
+              
             } catch (Exception e) {
                 pessoa = null;
             }                      
@@ -74,7 +75,7 @@ public class auth extends HttpServlet {
                 session.setAttribute("idPessoa", pessoa.getIdPessoa());
                 session.setMaxInactiveInterval(60 * 90);
 
-                response.sendRedirect("/" + loginAcesso.getPerfil() + "/");
+                response.sendRedirect("/app-civa/" + loginAcesso.getPerfil() + "/");
 
             }else{
             //Login errado

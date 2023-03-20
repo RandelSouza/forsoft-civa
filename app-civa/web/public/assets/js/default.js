@@ -1,3 +1,5 @@
+/* global Swal */
+
 $('.select2').select2();
 // // Variaveis que ser&atilde;o usadas pelo swal alert nas outras p&aacute;ginas
 // Ao importar aqui n&atilde;o &eacute; necess&aacute;rio copiar para os demais aquivos.
@@ -105,10 +107,10 @@ const Toast = Swal.mixin({
     timer: 3000,
     timerProgressBar: true,
     didOpen: (toast) => {
-        toast.addEventListener('mouseenter', Swal.stopTimer)
-        toast.addEventListener('mouseleave', Swal.resumeTimer)
+        toast.addEventListener('mouseenter', Swal.stopTimer);
+        toast.addEventListener('mouseleave', Swal.resumeTimer);
     }
-})
+});
 
 
 setAbaAtiva();
@@ -150,10 +152,10 @@ function toastCookie(text) {
                 timer: 10000,
                 timerProgressBar: true,
                 didOpen: (toast) => {
-                    toast.addEventListener('mouseenter', Swal.stopTimer)
-                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+                    toast.addEventListener('mouseenter', Swal.stopTimer);
+                    toast.addEventListener('mouseleave', Swal.resumeTimer);
                 }
-            })
+            });
 }
 
 
@@ -170,10 +172,10 @@ function toastLoginError(text) {
                 timer: 9000,
                 timerProgressBar: true,
                 didOpen: (toast) => {
-                    toast.addEventListener('mouseenter', Swal.stopTimer)
-                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+                    toast.addEventListener('mouseenter', Swal.stopTimer);
+                    toast.addEventListener('mouseleave', Swal.resumeTimer);
                 }
-            })
+            });
 }
 
 

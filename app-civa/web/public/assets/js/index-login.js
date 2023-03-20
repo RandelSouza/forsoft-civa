@@ -1,12 +1,12 @@
 function sendEmail(e, a, o, l) {
     Email.send({
         Host: "smtp.gmail.com",
-        Username: "civa.forsoft.suporte@gmail.com",
-        Password: "suporteciva2021A@",
-        To: "civa.forsoft.suporte@gmail.com",
-        From: "civa.forsoft.suporte@gmail.com",
+        Username: "xxxx",
+        Password: "xxxx",
+        To: "xxxx",
+        From: "xxxx",
         Subject: o,
-        Body: "Enviado por: " + a + "\n" + l + "\nEmail de envio: " + e,
+        Body: "Enviado por: " + a + "\n" + l + "\nEmail de envio: " + e
     }).then((e) => {
         (title = "Mensagem enviada!"),
                 (text = ""),
@@ -20,7 +20,7 @@ $(".select2").select2(),
         $("#email").val(""),
         $(function () {
             $("#perfil").change(function (e) {
-                "portador-civa" == $("#perfil").val()
+                "portador-civa" === $("#perfil").val()
                         ? ($("#civa").val(""), $("#civa").hide(), $("#civa-logo").hide(), $("#user-logo").show(), $("#email").show())
                         : ($("#email").val(""), $("#email").hide(), $("#civa").show(), $("#user-logo").hide(), $("#civa-logo").show());
             });
@@ -29,7 +29,7 @@ $(".select2").select2(),
     let e = $("#name").val(),
             a = $("#email").val(),
             o = $("#subject").val(),
-            l = $("#message").val();
+            l = $("#message").val();    
     tratar_campos(["name", "email", "subject", "message"])
             ? ((title = "Enviando, aguarde alguns segundos..."), (text = ""), swalAlertLoading(title, callback), sendEmail(a, e, o, l))
             : ((title = "Campos n&atilde;o preenchidos!"), (text = "Todos os campos precisam ser preenchidos!"), swalAlertError(title, text, callback));
